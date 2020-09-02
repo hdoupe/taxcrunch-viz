@@ -57,7 +57,10 @@ def make_fig(mstat=2, pwages=80000, swages=0, item=0, businc=0, sstb=0):
     return df_filter, fig
 
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(
+    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    url_base_pathname=os.environ.get("URL_BASE_PATHNAME", "/"),
+)
 
 widgets = dbc.Col(
     [

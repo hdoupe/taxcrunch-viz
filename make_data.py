@@ -188,4 +188,5 @@ def stack_data():
 
 
 if __name__ == "__main__":
-    stack_data()
+    df_all = stack_data()
+    df_all.to_parquet('widget_data.gzip', compression='gzip')

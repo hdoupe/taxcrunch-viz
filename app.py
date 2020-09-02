@@ -11,9 +11,9 @@ from dash.dependencies import Input, Output
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 
 CURR_PATH = os.path.abspath(os.path.dirname(__file__))
-DATA_PATH = os.path.join(CURR_PATH, "widget_data.csv")
+DATA_PATH = os.path.join(CURR_PATH, "widget_data.gzip")
 
-df_all = pd.read_csv(DATA_PATH)
+df_all = pd.read_parquet(DATA_PATH)
 
 
 def make_fig(mstat=2, pwages=80000, swages=0, item=0, businc=0, sstb=0):
